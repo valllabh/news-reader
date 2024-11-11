@@ -1,9 +1,10 @@
 def handler(event):
     print("Function was invoked with event: {}".format(event))
     
-    name = event.get("queryStringParameters", {}).get("name", "World")
+    # get post param "url" from event
+    url = event.get("queryStringParameters", {}).get("url", "")
     
     return {
         "statusCode": 200,
-        "body": f"Hello, {name}! Welcome to Genezio Functions!"
+        "body": f"URL: {url}"
     }
