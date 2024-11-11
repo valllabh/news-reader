@@ -1,13 +1,17 @@
 backend:
-  functions:
-  - entry: index.py
-    handler: handler
-    name: news-reader
+    functions:
+        - entry: index.py
+          handler: handler
+          name: function-function
+          path: ./
+          type: function
+    language:
+        name: python
+        packageManager: pip
     path: ./
-  language:
-    name: python
-    packageManager: pip
-  path: ./
+    scripts:
+        deploy:
+            - npm install
 name: news-reader
 region: us-east-1
 yamlVersion: 2
